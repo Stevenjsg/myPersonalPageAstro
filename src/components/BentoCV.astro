@@ -1,0 +1,143 @@
+---
+import CV from "../data/mockedCV.json";
+import MailIcon from "./MailIcon.astro";
+import IconMapPin from "./IconMapPin.astro";
+const { basics, education, stack, work, projects, languages, interests } = CV;
+---
+
+<section class="container">
+  <article class="personalData border border-white rounded-2xl">
+    <!-- FOTO -->
+    <div class="foto flex place-content-center-safe py-2 px-4">
+      <div
+        class="bg-white rounded-full w-64 h-64 flex justify-center items-center overflow-hidden"
+      >
+        <img
+          src={basics.image}
+          class="rounded-full w-64 h-64 object-cover"
+          loading="lazy"
+          alt={`Foto de perfil de ${basics.name}`}
+        />
+      </div>
+    </div>
+
+    <!-- INFORMACION PERSONAL -->
+    <div class="basic flex flex-col space-y-8 items-center py-2 px-4">
+      <h2 class="text-3xl font-bold">{basics.label}</h2>
+      <h3 class="text-3xl">{basics.name}</h3>
+      <p class="text-balance italic text-md">{basics.summary}</p>
+    </div>
+
+    <!-- Informacion de contacto -->
+    <div class="adress flex items-center gap-2 px-4">
+      <!-- Ubicación -->
+      <div class="flex items-center gap-1">
+        <IconMapPin className="w-5 h-5" />
+        <p>{basics.location.city}</p>
+      </div>
+
+      <!-- Email -->
+      <a class="flex items-center gap-1" href="mailto:stevenjsg.96@gmail.com">
+        <MailIcon className="w-5 h-5" />
+        <span>{basics.email}</span>
+      </a>
+
+      <!-- Redes -->
+      <div class="flex items-center gap-2">
+        <h3 class="font-semibold">Redes</h3>
+        <ul class="flex items-center gap-2">
+          {
+            basics.profiles.map((profile) => (
+              <li>
+                <a href={profile.url} class="hover:underline">
+                  {profile.network}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="educationData border border-white rounded-lg">
+    <h3>Education</h3>
+    <ul>
+      {
+        education.map((edu) => (
+          <li>
+            <h4>{edu.institution}</h4>
+            <p>{edu.studyType}</p>
+            <p>{edu.area}</p>
+            <p>{edu.startDate}</p>
+            <p>{edu.endDate}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+  <article class="stackData border border-white rounded-lg"></article>
+  <article class="experienceData border border-white rounded-lg"></article>
+  <article class="projectsData border border-white rounded-lg"></article>
+  <article class="lenguageData border border-white rounded-lg"></article>
+  <article class="randomData border border-white rounded-lg"></article>
+</section>
+
+<style is:inline>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    gap: 8px 8px;
+    grid-auto-flow: row dense;
+    grid-template-areas:
+      "personalData personalData personalData personalData educationData educationData"
+      "stackData stackData stackData experienceData experienceData experienceData"
+      "projectsData projectsData lenguageData lenguageData randomData randomData";
+  }
+
+  .personalData {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.1fr;
+    gap: 2px 2px;
+    grid-template-areas:
+      "foto foto basic basic"
+      "foto foto basic basic"
+      "adress adress adress adress";
+    grid-area: personalData;
+  }
+
+  .educationData {
+    grid-area: educationData;
+  }
+
+  .stackData {
+    grid-area: stackData;
+  }
+
+  .experienceData {
+    grid-area: experienceData;
+  }
+
+  .projectsData {
+    grid-area: projectsData;
+  }
+
+  .lenguageData {
+    grid-area: lenguageData;
+  }
+
+  .randomData {
+    grid-area: randomData;
+  }
+  .foto {
+    grid-area: foto;
+  }
+  .basic {
+    grid-area: basic;
+  }
+  .adress {
+    grid-area: adress;
+  }
+</style>

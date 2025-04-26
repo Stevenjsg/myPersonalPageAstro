@@ -1,0 +1,70 @@
+---
+import ArrowNarrowLeft from "../Icon/ArrowNarrowLeft.astro";
+import ArrowNarrowRight from "../Icon/ArrowNarrowRight.astro";
+const { stack } = Astro.props;
+---
+
+<article
+  class="border border-white/20 rounded-2xl p-6 bg-black text-white shadow-[0_2px_12px_rgba(255,255,255,0.05)] min-h-[200px]"
+>
+  <h3 class="text-xl font-semibold mb-4">Stack Tecnológico</h3>
+
+  <div class="relative">
+    <!-- Flechas -->
+    <button
+      id="prev"
+      class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/60 text-white rounded-full p-2 h-10 w-10 shadow-lg hover:bg-white/20 transition"
+      aria-label="Anterior"
+    >
+      <ArrowNarrowLeft size={24} className="text-black" />
+    </button>
+
+    <button
+      id="next"
+      class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/60 text-white rounded-full p-2 h-10 w-10 shadow-lg hover:bg-white/20 transition"
+      aria-label="Siguiente"
+    >
+      <ArrowNarrowRight size={24} className="text-black" />
+    </button>
+
+    <!-- Carrusel -->
+    <div
+      id="carousel"
+      class="overflow-x-hidden scroll-smooth snap-x snap-mandatory"
+    >
+      <ul class="flex gap-4 px-8 min-w-full">
+        {
+          stack.map((tech, index) => (
+            <li class="snap-start min-w-[250px] flex-shrink-0 border border-white/20 rounded-xl p-4 bg-white text-black">
+              <h4 class="text-lg font-bold mb-1 font-serif">{tech.name}</h4>
+              <p class="text-sm italic mb-2 text-gray-800">
+                Nivel: {tech.level}
+              </p>
+              <ul class="flex flex-wrap gap-2">
+                {tech.keywords.map((kw) => (
+                  <li class="bg-black text-white text-xs px-2 py-1 rounded-full">
+                    {kw}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <script type="module">
+    const carousel = document.getElementById("carousel");
+    const nextBtn = document.getElementById("next");
+    const prevBtn = document.getElementById("prev");
+
+    nextBtn?.addEventListener("click", () => {
+      carousel?.scrollBy({ left: 300, behavior: "smooth" });
+    });
+
+    prevBtn?.addEventListener("click", () => {
+      carousel?.scrollBy({ left: -300, behavior: "smooth" });
+    });
+  </script>
+</article>

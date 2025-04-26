@@ -1,0 +1,24 @@
+---
+const { education } = Astro.props;
+---
+
+<article
+  class="border border-white/20 rounded-2xl p-6 bg-black text-white shadow-[0_2px_12px_rgba(255,255,255,0.05)] min-h-[295px]"
+>
+  <h3 class="text-xl font-semibold mb-4 font-serif">Educación</h3>
+  <ul class="space-y-4">
+    {
+      education.map((edu) => (
+        <li class="border-l-4 border-white/20 pl-4">
+          <h4 class="text-lg font-bold">{edu.institution}</h4>
+          <p class="text-sm italic">
+            {edu.studyType} en {edu.area}
+          </p>
+          <p class="text-sm text-gray-300">
+            {edu.startDate} – {edu.endDate}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+</article>

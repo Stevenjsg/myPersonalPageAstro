@@ -1,0 +1,76 @@
+---
+import MailIcon from "../Icon/MailIcon.astro";
+import IconMapPin from "../Icon/IconMapPin.astro";
+import BrandX from "../Icon/BrandX.astro";
+import SocialLink from "../SocialLink.astro";
+import type { ACTION_ERROR_CODES, ACTION_QUERY_PARAMS } from "astro:actions";
+const { basics } = Astro.props;
+---
+
+<article
+  class="grid grid-cols-1 md:grid-cols-4 grid-rows-[auto_auto_auto] gap-4 border border-white/20 rounded-2xl p-6 bg-black text-white shadow-[0_2px_12px_rgba(255,255,255,0.05)] min-h-[200px]"
+>
+  <!-- FOTO -->
+  <div class="md:col-span-2 flex justify-center items-center">
+    <div
+      class="bg-white rounded-full w-48 h-48 flex justify-center items-center overflow-hidden"
+    >
+      <img
+        src={basics.image}
+        class="rounded-full w-full h-full object-cover"
+        loading="lazy"
+        alt={`Foto de perfil de ${basics.name}`}
+      />
+    </div>
+  </div>
+
+  <!-- INFORMACION PERSONAL -->
+  <div class="md:col-span-2 flex flex-col items-center text-center gap-3">
+    <h2 class="text-2xl font-bold font-serif">{basics.label}</h2>
+    <h3 class="text-xl font-semibold">{basics.name}</h3>
+    <p class="italic text-sm max-w-prose text-gray-300">{basics.summary}</p>
+  </div>
+
+  <!-- CONTACTO -->
+  <div
+    class="md:col-span-4 flex flex-wrap items-center gap-4 justify-center text-sm"
+  >
+    <!-- Ubicación -->
+    <div class="flex items-center gap-2">
+      <IconMapPin className="w-5 h-5" />
+      <span>{basics.location.city}</span>
+    </div>
+
+    <!-- Email -->
+    <a
+      href={`mailto:${basics.email}`}
+      class="flex items-center gap-2 hover:underline"
+    >
+      <MailIcon className="w-5 h-5" />
+      <span>{basics.email}</span>
+    </a>
+
+    <!-- Redes -->
+    <div class="flex items-center gap-2">
+      <h3 class="font-semibold">Redes:</h3>
+      <ul class="flex items-center gap-2">
+        {
+          basics.profiles.map((profile) => (
+            <li>
+              <a
+                href={profile.url}
+                class="hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {/* Icono de la red social */}
+                <span class="sr-only">{profile.network}</span>
+                <SocialLink {...profile} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</article>

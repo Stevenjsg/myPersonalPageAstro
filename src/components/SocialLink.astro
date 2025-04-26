@@ -1,0 +1,30 @@
+---
+import BrandGithub from "./Icon/BrandGithub.astro";
+import BrandX from "./Icon/BrandX.astro";
+
+const { name, url, icon } = Astro.props;
+
+const icons = {
+  github: BrandGithub,
+  x: BrandX,
+};
+
+const Icon = icons[icon];
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group flex items-center gap-2 hover:underline"
+>
+  {
+    Icon ? (
+      <Icon
+        size={20}
+        class="text-gray-600 group-hover:text-black transition-colors"
+      />
+    ) : null
+  }
+  <span>{name}</span>
+</a>

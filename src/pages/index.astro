@@ -1,16 +1,68 @@
 ---
+import NavBar from "../components/NavBar.astro";
+import CV from "../data/mockedCV.json";
+import PersonalData from "../components/cv/PersonalData.astro";
+import EducationData from "../components/cv/EducationData.astro";
+import StackData from "../components/cv/StackData.astro";
+import ExperienceData from "../components/cv/ExperienceData.astro";
+import ProjectsData from "../components/cv/ProjectsData.astro";
+import LanguageData from "../components/cv/LanguageData.astro";
+import RandomData from "../components/cv/RandomData.astro";
 
+import "../styles/global.css";
+
+const { basics, education, stack, work, projects, languages, interests } = CV;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Astro is a new kind of static site builder that delivers lightning-fast performance with a modern developer experience."
+    />
+    <title>{basics.name} | CV</title>
+  </head>
+  <body class="bg-black text-white font-sans mt-12">
+    <NavBar />
+    <main
+      class="max-w-screen-xl mx-auto p-4 print:p-0 print:bg-white print:text-black"
+    >
+      <section class="grid grid-cols-1 md:grid-cols-6 gap-4">
+        <div class="md:col-span-4">
+          <PersonalData basics={basics} />
+        </div>
+        <div class="md:col-span-2">
+          <EducationData education={education} />
+        </div>
+        <div class="md:col-span-3">
+          <StackData stack={stack} />
+        </div>
+        <div class="md:col-span-3">
+          <ExperienceData work={work} />
+        </div>
+        <div class="md:col-span-2">
+          <ProjectsData projects={projects} />
+        </div>
+        <div class="md:col-span-2">
+          <LanguageData languages={languages} />
+        </div>
+        <div class="md:col-span-2">
+          <RandomData interests={interests} />
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
+
+<style>
+  body {
+    position: relative;
+    background-color: rgb(var(--background-end-rgb));
+    color: white;
+  }
+</style>

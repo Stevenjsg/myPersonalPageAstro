@@ -1,0 +1,117 @@
+{
+    "basics": {
+      "name": "Steven Silva",
+      "label": "Programador",
+      "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1697746483/aeormsfvnz8zqrftzhgp.webp",
+      "email": "steven.jsg96@gmail.com",
+      "url": "https://stevenjsg.com",
+      "summary": "Futuro desarrollador web en formación, con una fuerte motivación por aprender y mejorar constantemente.",
+      "location": {
+        "address": "C/ Extremadura",
+        "postalCode": "IBZ 07800",
+        "city": "Eivissa",
+        "countryCode": "ES",
+        "region": "Islas Baleares"
+      },
+      "profiles": [{
+        "network": "X",
+        "username": "Steven_JSG",
+        "icon":"x",
+        "url": "https://x.com/Steven_JSG/"
+      },
+      {
+        "network": "GitHub",
+        "username": "StevenJSG",
+        "icon":"github",
+        "url": "https://github.com/stevenjsg/"}
+      ]
+    },
+    "work": [{
+      "name": "Company",
+      "position": "President",
+      "url": "https://company.com",
+      "startDate": "2013-01-01",
+      "endDate": "2014-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Started the company"
+      ]
+    }],
+    "education": [{
+      "institution": "Universidad Técnica de Manabí",
+      "url": "https://utm.edu.ec",
+      "area": "Facultad de ciencias informáticas",
+      "degree": "Ingeniería en sistemas informáticas",
+      "studyType": "Ingeniería",
+      "startDate": "2016",
+      "endDate": "2022",
+      "score": "8.0"
+    },{
+      "institution": "Juan XXIII",
+      "url": "",
+      "area": "Educación básica superior",
+      "degree": "E.S.O",
+      "studyType": "Secundaria",
+      "startDate": "2010",
+      "endDate": "2013",
+      "score": "6.0"
+    }],
+    "skills": [{
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    }],
+    "languages": [{
+      "language": "Español",
+      "fluency": "Nativo"
+    }],
+    "interests": [{
+      "name": "Gym",
+      "keywords": [
+        "Salud"
+      ]
+    }],
+    "projects": [{
+      "name": "Project",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "description": "Description...",
+      "highlights": [
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    }],
+    "stack": [{
+      "name": "React",
+      "icon": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1697746483/aeormsfvnz8zqrftzhgp.webp",
+      "level": "Intermedio",
+      "keywords": [
+        "React",
+        "React Router",
+        "Redux"
+      ]
+    },
+    {
+      "name": "Node",
+      "level": "Intermedio",
+      "keywords": [
+        "Node",
+        "Express",
+        "MongoDB"
+      ]
+    },
+    {
+      "name":"AstroJS",
+      "level":"Intermedio",
+      "keywords":[
+        "Astro",
+        "React",
+        "TailwindCSS"
+      ]
+    }
+  ]
+  }
