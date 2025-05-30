@@ -3,32 +3,99 @@ const { projects } = Astro.props;
 ---
 
 <article
-  class="border border-white/20 rounded-2xl p-6 bg-black text-white shadow-[0_2px_12px_rgba(255,255,255,0.05)] min-h-[200px]"
+  class="border border-[rgba(0,0,0,0.04)] dark:border-white/10
+  rounded-3xl p-6
+  bg-white/70 dark:bg-white/10
+  backdrop-blur-xl
+  text-black dark:text-white
+  shadow-[0_6px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(25,30,55,0.80)]
+  min-h-[300px]
+  transition-all duration-300 ease-in-out
+  hover:shadow-lg
+  hover:bg-white/20 dark:hover:bg-neutral-800/20
+  dark:hover:ring dark:hover:ring-blue-500/20"
 >
-  <h3 class="text-xl font-semibold mb-4 font-serif">Proyectos</h3>
-  <ul class="space-y-4">
+  <h3 class="text-xl font-semibold mb-6 font-serif">Proyectos</h3>
+
+  <div class="grid gap-6 md:grid-cols-2">
     {
-      projects.map((project) => (
-        <li class="border-l-4 border-white/20 pl-4">
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-lg font-bold hover:underline"
-          >
-            {project.name}
-          </a>
-          <p class="text-sm italic mb-1 text-gray-300">
-            {project.startDate} – {project.endDate}
-          </p>
-          <p class="text-sm mb-2">{project.description}</p>
-          <ul class="list-disc list-inside text-sm text-gray-400">
-            {project.highlights.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </li>
-      ))
+      !!projects?.length &&
+        projects.map((project) => (
+          <div class="border border-white/20 rounded-2xl p-4 bg-white/80 dark:bg-white/10 shadow-md hover:shadow-2xl transition group flex flex-col gap-2">
+            {/* Imagen */}
+            {project.image && (
+              <img
+                src={project.image}
+                alt={`Imagen del proyecto ${project.name}`}
+                class="rounded-xl w-full aspect-video object-cover border border-white/10 mb-2 group-hover:scale-105 group-hover:shadow-xl transition"
+              />
+            )}
+
+            {/* Nombre del proyecto */}
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-lg font-bold hover:underline block mb-1"
+            >
+              {project.name}
+            </a>
+
+            {/* Fechas */}
+            <span class="text-xs text-zinc-400 italic">
+              {project.startDate} — {project.endDate}
+            </span>
+
+            {/* Descripción corta */}
+            <p class="text-zinc-700 dark:text-zinc-200 text-sm mb-1">
+              {project.description}
+            </p>
+
+            {/* Badges del stack, si existe project.keywords */}
+            {project.keywords && project.keywords.length > 0 && (
+              <div class="flex gap-2 flex-wrap mb-1">
+                {project.keywords.map((kw) => (
+                  <span class="bg-zinc-800/90 text-white px-2 py-1 text-xs rounded-full dark:bg-zinc-700">
+                    {kw}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Highlights/features */}
+            {!!project.highlights?.length && (
+              <ul class="list-disc list-inside text-xs text-zinc-500 dark:text-zinc-400 mb-2">
+                {project.highlights.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+
+            {/* Links a demo y código */}
+            <div class="flex gap-2 mt-auto">
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline text-blue-600 hover:text-blue-400 text-xs"
+                >
+                  Demo
+                </a>
+              )}
+              {project.repository && (
+                <a
+                  href={project.repository}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline text-zinc-600 hover:text-zinc-400 text-xs"
+                >
+                  Código
+                </a>
+              )}
+            </div>
+          </div>
+        ))
     }
-  </ul>
+  </div>
 </article>

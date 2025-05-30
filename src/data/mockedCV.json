@@ -68,26 +68,67 @@
     "languages": [{
       "language": "Español",
       "fluency": "Nativo"
+    },
+    {
+      "language": "Inglés",
+      "fluency": "Intermedio"
     }],
     "interests": [{
       "name": "Gym",
       "keywords": [
-        "Salud"
+        "Salud",
+        "Deporte",
+        "Fuerza"
       ]
-    }],
-    "projects": [{
-      "name": "Project",
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
-      "description": "Description...",
-      "highlights": [
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
-    }],
+    },
+    {
+      "name": "Tecnología",
+      "keywords": [
+        "Desarrollo web",
+        "Programación"
+      ]
+    },
+    {
+      "name": "Música",
+      "keywords": [
+        "Rock",
+        "Phonk",
+        "Trap"
+      ]
+    },
+  {
+    "name": "Manga, Anime y Videojuegos",
+    "keywords": [
+      "Manga",
+      "Anime",
+      "Videojuegos"
+    ]
+  },
+{
+  "name": "Leer libros",
+  "keywords": [
+    "Ficción",
+    "No ficción",
+    "Ciencia ficción"
+  ] 
+}],
+  
+
+
+    "projects": [
+  {
+    "name": "Mi Primer Proyecto",
+    "startDate": "2023-01-01",
+    "endDate": "2023-06-01",
+    "description": "Un clon de Twitter hecho con React y Tailwind.",
+    "highlights": ["Autenticación", "Publicaciones", "Comentarios"],
+    "url": "https://proyecto.com",
+    "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1697746483/aeormsfvnz8zqrftzhgp.webp"
+  }
+],
     "stack": [{
       "name": "React",
-      "icon": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1697746483/aeormsfvnz8zqrftzhgp.webp",
+      "icon": "https://res.cloudinary.com/dljyrseph/image/upload/v1745693231/react_y8fs0p.svg",
       "level": "Intermedio",
       "keywords": [
         "React",
@@ -97,6 +138,7 @@
     },
     {
       "name": "Node",
+      "icon": "https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/nodedotjs_zvmoiy.svg",
       "level": "Intermedio",
       "keywords": [
         "Node",
@@ -106,6 +148,7 @@
     },
     {
       "name":"AstroJS",
+      "icon":"https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
       "level":"Intermedio",
       "keywords":[
         "Astro",

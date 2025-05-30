@@ -3,15 +3,27 @@ const { languages } = Astro.props;
 ---
 
 <article
-  class="border border-white/20 rounded-2xl p-6 bg-black text-white shadow-[0_2px_12px_rgba(255,255,255,0.05)] min-h-[200px]"
+  class="border border-[rgba(0,0,0,0.04)] dark:border-white/10
+  rounded-3xl p-6
+  bg-white/70 dark:bg-white/10
+  backdrop-blur-xl
+  text-black dark:text-white
+  shadow-[0_6px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(25,30,55,0.80)]
+  min-h-[200px]
+  transition-all duration-300 ease-in-out
+  hover:shadow-lg
+  hover:bg-white/20 dark:hover:bg-neutral-800/20
+  dark:hover:ring dark:hover:ring-blue-500/20"
 >
   <h3 class="text-xl font-semibold mb-4 font-serif">Idiomas</h3>
   <ul class="space-y-2">
     {
       languages.map((lang) => (
-        <li class="flex justify-between items-center border-b border-gray-700 pb-1">
-          <span class="text-sm font-medium">{lang.language}</span>
-          <span class="text-sm italic text-gray-300">{lang.fluency}</span>
+        <li class="flex justify-between items-center border-b border-zinc-500 dark:border-zinc-200 pb-1">
+          <span class="text-sm text-zinc-500  dark:text-white font-medium">
+            {lang.language}
+          </span>
+          <span class="text-sm italic text-gray-400">{lang.fluency}</span>
         </li>
       ))
     }

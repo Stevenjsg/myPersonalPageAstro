@@ -1,0 +1,52 @@
+---
+const isDark = `
+  (localStorage.getItem('theme') === 'dark') ||
+  (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+`;
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Cambiar modo claro/oscuro"
+  class="fixed bottom-4 right-4 px-4 py-2 rounded-md bg-gray-200 text-black dark:hover:bg-zinc-700 dark:bg-zinc-800 dark:text-white shadow z-50 flex items-center gap-2 print:hidden"
+>
+  <span id="theme-toggle-icon">🌙</span>
+  <span class="hidden sm:inline">Tema</span>
+</button>
+
+<script type="module" is:inline>
+  const btn = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-toggle-icon");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  // Función para actualizar el ícono y modo
+  function updateThemeIcon() {
+    if (document.documentElement.classList.contains("dark")) {
+      icon.textContent = "🌞";
+    } else {
+      icon.textContent = "🌙";
+    }
+  }
+
+  // Inicializa según preferencia
+  if (
+    localStorage.getItem("theme") === "dark" ||
+    (!("theme" in localStorage) && prefersDark)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+  updateThemeIcon();
+
+  btn.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    if (document.documentElement.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+    updateThemeIcon();
+  });
+</script>

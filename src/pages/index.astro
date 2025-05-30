@@ -10,6 +10,7 @@ import LanguageData from "../components/cv/LanguageData.astro";
 import RandomData from "../components/cv/RandomData.astro";
 
 import "../styles/global.css";
+import ThemeToggle from "../components/utils/ThemeToggle.astro";
 
 const { basics, education, stack, work, projects, languages, interests } = CV;
 ---
@@ -27,7 +28,9 @@ const { basics, education, stack, work, projects, languages, interests } = CV;
     />
     <title>{basics.name} | CV</title>
   </head>
-  <body class="bg-black text-white font-sans mt-12">
+  <body
+    class="min-h-screen bg-white text-black dark:text-white font-sans mt-16 dark:bg-gradient-to-br dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800"
+  >
     <NavBar />
     <main
       class="max-w-screen-xl mx-auto p-4 print:p-0 print:bg-white print:text-black"
@@ -43,26 +46,26 @@ const { basics, education, stack, work, projects, languages, interests } = CV;
           <StackData stack={stack} />
         </div>
         <div class="md:col-span-3">
-          <ExperienceData work={work} />
-        </div>
-        <div class="md:col-span-2">
           <ProjectsData projects={projects} />
         </div>
         <div class="md:col-span-2">
           <LanguageData languages={languages} />
         </div>
-        <div class="md:col-span-2">
+        <div class="md:col-span-4">
           <RandomData interests={interests} />
+        </div>
+        <div class="md:col-span-6 hidden noprint:block">
+          <ExperienceData work={work} />
         </div>
       </section>
     </main>
+    <ThemeToggle />
   </body>
 </html>
 
 <style>
   body {
     position: relative;
-    background-color: rgb(var(--background-end-rgb));
-    color: white;
+    min-height: 100dvh;
   }
 </style>

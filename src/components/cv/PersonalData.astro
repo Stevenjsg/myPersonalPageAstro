@@ -8,12 +8,22 @@ const { basics } = Astro.props;
 ---
 
 <article
-  class="grid grid-cols-1 md:grid-cols-4 grid-rows-[auto_auto_auto] gap-4 border border-white/20 rounded-2xl p-6 bg-black text-white shadow-[0_2px_12px_rgba(255,255,255,0.05)] min-h-[200px]"
+  class="grid grid-cols-1 md:grid-cols-4 grid-rows-[auto_auto_auto] gap-4 border border-[rgba(0,0,0,0.04)] dark:border-white/10
+  rounded-3xl p-6
+  bg-white/70 dark:bg-white/10
+  backdrop-blur-xl
+  text-black dark:text-white
+  shadow-[0_6px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(25,30,55,0.80)]
+  min-h-[200px]
+  transition-all duration-300 ease-in-out
+  hover:shadow-lg
+  hover:bg-white/20 dark:hover:bg-neutral-800/20
+  dark:hover:ring dark:hover:ring-blue-500/20"
 >
   <!-- FOTO -->
   <div class="md:col-span-2 flex justify-center items-center">
     <div
-      class="bg-white rounded-full w-48 h-48 flex justify-center items-center overflow-hidden"
+      class="bg-white dark:bg-gray-950 rounded-full w-48 h-48 flex justify-center items-center overflow-hidden"
     >
       <img
         src={basics.image}
@@ -28,7 +38,9 @@ const { basics } = Astro.props;
   <div class="md:col-span-2 flex flex-col items-center text-center gap-3">
     <h2 class="text-2xl font-bold font-serif">{basics.label}</h2>
     <h3 class="text-xl font-semibold">{basics.name}</h3>
-    <p class="italic text-sm max-w-prose text-gray-300">{basics.summary}</p>
+    <p class="italic text-sm max-w-prose text-gray-500 dark:text-gray-400">
+      {basics.summary}
+    </p>
   </div>
 
   <!-- CONTACTO -->
