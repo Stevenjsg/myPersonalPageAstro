@@ -11,6 +11,8 @@ import RandomData from "../components/cv/RandomData.astro";
 
 import "../styles/global.css";
 import ThemeToggle from "../components/utils/ThemeToggle.astro";
+import ButtonPdfDownloader from "../components/utils/ButtonPdfDownloader.astro";
+import PdfViewer from "../components/utils/PdfViewer.astro";
 
 const { basics, education, stack, work, projects, languages, interests } = CV;
 ---
@@ -59,6 +61,8 @@ const { basics, education, stack, work, projects, languages, interests } = CV;
         </div>
       </section>
     </main>
+    <PdfViewer {...CV} />
+    <ButtonPdfDownloader targetId="cv-content" fileName="CV_StevenSilva.pdf" />
     <ThemeToggle />
   </body>
 </html>

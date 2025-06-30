@@ -123,7 +123,10 @@
     "description": "Un clon de Twitter hecho con React y Tailwind.",
     "highlights": ["Autenticación", "Publicaciones", "Comentarios"],
     "url": "https://proyecto.com",
-    "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1697746483/aeormsfvnz8zqrftzhgp.webp"
+    "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1748638408/7bb3babffa2f72e63d0d332f931356b1.webp",
+    "keywords": ["React", "TailwindCSS", "JavaScript"],
+    "repository": "https://github.com/Stevenjsg/prueba-next14",
+    "demo": "https://filmscenter.vercel.app/"
   }
 ],
     "stack": [{

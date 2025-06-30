@@ -1,0 +1,13 @@
+---
+// Puedes recibir props si quieres customizar el CV
+const { basics, education, stack, work, projects, languages, interests } =
+  Astro.props;
+---
+
+<div id="cv-content" class="absolute left-[-9999px] print:static">
+  <!-- Aquí va TODO el CV renderizado (grid, bentos, etc.) -->
+  <!-- Ejemplo mínimo: -->
+  <h1>{basics.name}</h1>
+  <p>{basics.label}</p>
+  <!-- ...etc -->
+</div>
