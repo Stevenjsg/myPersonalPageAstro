@@ -9,9 +9,9 @@
       "location": {
         "address": "C/ Extremadura",
         "postalCode": "IBZ 07800",
-        "city": "Eivissa",
+        "city": "Valencia",
         "countryCode": "ES",
-        "region": "Islas Baleares"
+        "region": "Valencia"
       },
       "profiles": [{
         "network": "X",
@@ -37,16 +37,27 @@
         "Started the company"
       ]
     }],
-    "education": [{
+    "education": [
+      {
+      "institution": "Universidad Politecnica de Valencia",
+      "url": "https://www.upv.es/estudios/master/muiinf/",
+      "area": "Escuela Técnica Superior de Ingeniería Informática",
+      "degree": "Máster Universitario en Ingeniería Informática",
+      "studyType": "Máster",
+      "startDate": "2025",
+      "endDate": "2027",
+      "score": "N/A"
+    },{
       "institution": "Universidad Técnica de Manabí",
       "url": "https://utm.edu.ec",
       "area": "Facultad de ciencias informáticas",
-      "degree": "Ingeniería en sistemas informáticas",
+      "degree": "Ingeniería en Sistemas informáticos",
       "studyType": "Ingeniería",
       "startDate": "2016",
       "endDate": "2022",
       "score": "8.0"
-    },{
+    },
+  {
       "institution": "Juan XXIII",
       "url": "",
       "area": "Educación básica superior",
@@ -157,6 +168,36 @@
         "Astro",
         "React",
         "TailwindCSS"
+      ]
+    },
+     {
+      "name":"Typescript",
+      "icon":"https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
+      "level":"Intermedio",
+      "keywords":[
+        "Typescript",
+        "Tipos",
+        "Interfaces"
+      ]
+    },
+     {
+      "name":"NextJS",
+      "icon":"https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
+      "level":"Intermedio",
+      "keywords":[
+        "React",
+        "NextJS",
+        "Framework"
+      ]
+    },
+     {
+      "name":"PostgreSQL",
+      "icon":"https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
+      "level":"Intermedio",
+      "keywords":[
+        "SQL",
+        "Base de datos",
+        "Queries"
       ]
     }
   ]
