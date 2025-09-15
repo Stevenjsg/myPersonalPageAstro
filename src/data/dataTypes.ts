@@ -58,8 +58,8 @@ export interface Language {
 
 export interface Project {
     name:        string;
-    startDate:   Date;
-    endDate:     Date;
+    startDate:   string;
+    endDate:     string;
     description: string;
     highlights:  string[];
     url:         string;
@@ -80,8 +80,8 @@ export interface Work {
     name:       string;
     position:   string;
     url:        string;
-    startDate:  Date;
-    endDate:    Date;
+    startDate:  string;
+    endDate:    string;
     summary:    string;
     highlights: string[];
 }

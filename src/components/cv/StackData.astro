@@ -1,6 +1,7 @@
 ---
 import ArrowNarrowLeft from "../Icon/ArrowNarrowLeft.astro";
 import ArrowNarrowRight from "../Icon/ArrowNarrowRight.astro";
+import type { Skill } from "../../data/dataTypes";
 const { stack } = Astro.props;
 ---
 
@@ -11,13 +12,13 @@ const { stack } = Astro.props;
   backdrop-blur-xl
   text-black dark:text-white
   shadow-[0_6px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(25,30,55,0.80)]
-  min-h-[500px]
+  min-h-[300px]
   transition-all duration-300 ease-in-out
   hover:shadow-lg
   hover:bg-white/20 dark:hover:bg-neutral-800/20
   dark:hover:ring dark:hover:ring-blue-500/20 grid"
 >
-  <h3 class="text-xl font-semibold">Stack Tecnológico</h3>
+  <h3 class="text-xl font-semibold">Habilidades Tecnológicas</h3>
 
   <div class="relative grid place-content-center overflow-hidden">
     <!-- Flechas -->
@@ -40,13 +41,13 @@ const { stack } = Astro.props;
     <!-- Carrusel -->
     <div
       id="carousel"
-      class="place-items-center grid min-h-[320px] max-h-[320px] overflow-hidden scroll-smooth snap-x snap-mandatory scrollbar-none"
+      class="place-items-center grid min-h-[300px] max-h-[320px] overflow-hidden scroll-smooth snap-x snap-mandatory scrollbar-none"
     >
       <ul
-        class="flex gap-8 min-w-full place-items-center ps-[1000px] after:block after:w-12"
+        class="flex gap-4 min-w-full place-items-center ps-[1000px] after:block after:w-12"
       >
         {
-          stack.map((tech, _) => (
+          stack.map((tech: Skill, _: number) => (
             <li class="snap-start min-w-[250px] w-[250px] h-[260px] flex-shrink-0 border border-white/20 rounded-2xl p-0 bg-white text-black dark:bg-neutral-900 dark:text-white shadow-md">
               <div class="p-6 transition-transform duration-300 ease-in-out hover:scale-105 h-full flex flex-col items-center justify-center">
                 {/* //Wrapper */}

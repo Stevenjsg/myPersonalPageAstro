@@ -2,8 +2,9 @@
 import MailIcon from "../Icon/MailIcon.astro";
 import IconMapPin from "../Icon/IconMapPin.astro";
 import SocialLink from "../SocialLink.astro";
-import type { Basics } from "../../data/dataTypes";
-const { basics }: { basics: Basics } = Astro.props;
+import type { Profile } from "../../data/dataTypes";
+const { basics } = Astro.props;
+const { profiles } = basics;
 ---
 
 <article
@@ -13,7 +14,7 @@ const { basics }: { basics: Basics } = Astro.props;
   backdrop-blur-xl
   text-black dark:text-white
   shadow-[0_6px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(25,30,55,0.80)]
-  min-h-[350px]
+  min-h-[377px]
   transition-all duration-300 ease-in-out
   hover:shadow-lg
   hover:bg-white/20 dark:hover:bg-neutral-800/20
@@ -37,7 +38,9 @@ const { basics }: { basics: Basics } = Astro.props;
   <div class="md:col-span-2 flex flex-col items-center text-center gap-3">
     <h2 class="text-2xl font-bold font-serif">{basics.label}</h2>
     <h3 class="text-xl font-semibold">{basics.name}</h3>
-    <p class="italic text-sm max-w-prose text-gray-500 dark:text-gray-400">
+    <p
+      class="italic text-sm max-w-prose text-gray-500 dark:text-gray-400 text-balance"
+    >
       {basics.summary}
     </p>
   </div>
@@ -66,7 +69,7 @@ const { basics }: { basics: Basics } = Astro.props;
       <h3 class="font-semibold">Redes:</h3>
       <ul class="flex items-center gap-2">
         {
-          basics.profiles.map((profile) => (
+          profiles.map((profile: Profile) => (
             <li>
               <a
                 href={profile.url}

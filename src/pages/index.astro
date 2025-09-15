@@ -13,33 +13,12 @@ import "../styles/global.css";
 import ThemeToggle from "../components/utils/ThemeToggle.astro";
 import ButtonPdfDownloader from "../components/utils/ButtonPdfDownloader.astro";
 import PdfViewer from "../components/utils/PdfViewer.astro";
-import type {
-  Basics,
-  Education,
-  Skill,
-  Work,
-  Project,
-  Language,
-  Interest,
-} from "../data/dataTypes";
 
-const {
-  basics,
-  education,
-  stack,
-  work,
-  projects,
-  languages,
-  interests,
-}: {
-  basics: Basics;
-  education: Education[];
-  stack: Skill[];
-  work: Work[];
-  projects: Project[];
-  languages: Language[];
-  interests: Interest[];
-} = CV;
+import type { CvMockup } from "../data/dataTypes";
+
+const cvData: CvMockup = CV;
+const { basics, education, stack, work, projects, languages, interests } =
+  cvData;
 ---
 
 <html lang="es">
@@ -67,10 +46,10 @@ const {
           <PersonalData basics={basics} />
         </div>
         <div class="md:col-span-2">
-          <EducationData education={education} />
+          <StackData stack={stack} />
         </div>
         <div class="md:col-span-3">
-          <StackData stack={stack} />
+          <EducationData education={education} />
         </div>
         <div class="md:col-span-3">
           <ProjectsData projects={projects} />
