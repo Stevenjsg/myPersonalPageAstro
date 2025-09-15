@@ -85,3 +85,6 @@ export interface Work {
     summary:    string;
     highlights: string[];
 }
+export interface Works {
+    Works: Work[]
+}

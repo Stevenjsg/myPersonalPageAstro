@@ -13,8 +13,33 @@ import "../styles/global.css";
 import ThemeToggle from "../components/utils/ThemeToggle.astro";
 import ButtonPdfDownloader from "../components/utils/ButtonPdfDownloader.astro";
 import PdfViewer from "../components/utils/PdfViewer.astro";
+import type {
+  Basics,
+  Education,
+  Skill,
+  Work,
+  Project,
+  Language,
+  Interest,
+} from "../data/dataTypes";
 
-const { basics, education, stack, work, projects, languages, interests } = CV;
+const {
+  basics,
+  education,
+  stack,
+  work,
+  projects,
+  languages,
+  interests,
+}: {
+  basics: Basics;
+  education: Education[];
+  stack: Skill[];
+  work: Work[];
+  projects: Project[];
+  languages: Language[];
+  interests: Interest[];
+} = CV;
 ---
 
 <html lang="es">

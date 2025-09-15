@@ -1,4 +1,5 @@
 ---
+import type { Language } from "../../data/dataTypes";
 const { languages } = Astro.props;
 ---
 
@@ -18,7 +19,7 @@ const { languages } = Astro.props;
   <h3 class="text-xl font-semibold mb-4 font-serif">Idiomas</h3>
   <ul class="space-y-2">
     {
-      languages.map((lang) => (
+      languages.map((lang: Language) => (
         <li class="flex justify-between items-center border-b border-zinc-500 dark:border-zinc-200 pb-1">
           <span class="text-sm text-zinc-500  dark:text-white font-medium">
             {lang.language}

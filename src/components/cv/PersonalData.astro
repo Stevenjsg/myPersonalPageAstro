@@ -1,10 +1,9 @@
 ---
 import MailIcon from "../Icon/MailIcon.astro";
 import IconMapPin from "../Icon/IconMapPin.astro";
-import BrandX from "../Icon/BrandX.astro";
 import SocialLink from "../SocialLink.astro";
-import type { ACTION_ERROR_CODES, ACTION_QUERY_PARAMS } from "astro:actions";
-const { basics } = Astro.props;
+import type { Basics } from "../../data/dataTypes";
+const { basics }: { basics: Basics } = Astro.props;
 ---
 
 <article
