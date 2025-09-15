@@ -1,6 +1,7 @@
 ---
+/* @jsxImportSource astro */
+import type { Education } from "../../data/dataTypes";
 const { education } = Astro.props;
-const { degree, studyType, area, startDate, endDate } = education;
 ---
 
 <article
@@ -17,10 +18,10 @@ const { degree, studyType, area, startDate, endDate } = education;
   dark:hover:ring dark:hover:ring-blue-500/20"
 >
   <h3 class="text-xl font-semibold mb-4 font-serif">Educación</h3>
-  <ul class="space-y-4">
+  <ul class="space-y-2">
     {
-      education.map((edu) => (
-        <li class="border-l-4 border-white/20 pl-4">
+      education.map((edu: Education) => (
+        <li class="border-l-4 dark:border-white/20 border-black/10 pl-4">
           <h4 class="text-lg font-bold">{edu.degree}</h4>
           <p class="text-sm italic">{edu.institution}</p>
           <p class="text-sm text-gray-400">{edu.area}</p>

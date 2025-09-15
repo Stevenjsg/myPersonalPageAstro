@@ -5,10 +5,10 @@
       "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1697746483/aeormsfvnz8zqrftzhgp.webp",
       "email": "steven.jsg96@gmail.com",
       "url": "https://stevenjsg.com",
-      "summary": "Futuro desarrollador web en formación, con una fuerte motivación por aprender y mejorar constantemente.",
+      "summary": "Soy un desarrollador web en formación con una sólida base en React y Node. Mi objetivo es crear aplicaciones funcionales y visualmente atractivas, y siempre estoy buscando nuevas formas de aprender y mejorar mis habilidades.",
       "location": {
-        "address": "C/ Extremadura",
-        "postalCode": "IBZ 07800",
+        "address": "C/ Escultor Alfonso Gabino",
+        "postalCode": "VAL 46022",
         "city": "Valencia",
         "countryCode": "ES",
         "region": "Valencia"
@@ -39,7 +39,7 @@
     }],
     "education": [
       {
-      "institution": "Universidad Politecnica de Valencia",
+      "institution": "Universidad Politécnica de Valencia",
       "url": "https://www.upv.es/estudios/master/muiinf/",
       "area": "Escuela Técnica Superior de Ingeniería Informática",
       "degree": "Máster Universitario en Ingeniería Informática",
@@ -58,7 +58,7 @@
       "score": "8.0"
     },
   {
-      "institution": "Juan XXIII",
+      "institution": "Colegio Juan XXIII",
       "url": "",
       "area": "Educación básica superior",
       "degree": "E.S.O",
@@ -128,14 +128,14 @@
 
     "projects": [
   {
-    "name": "Mi Primer Proyecto",
+    "name": "Página web de películas y cartelera",
     "startDate": "2023-01-01",
     "endDate": "2023-06-01",
-    "description": "Un clon de Twitter hecho con React y Tailwind.",
+    "description": "Página web sencilla, con uso de API y hecho con React y Tailwind.",
     "highlights": ["Autenticación", "Publicaciones", "Comentarios"],
     "url": "https://proyecto.com",
     "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1748638408/7bb3babffa2f72e63d0d332f931356b1.webp",
-    "keywords": ["React", "TailwindCSS", "JavaScript"],
+    "keywords": ["NextJS", "TailwindCSS", "TypeScript"],
     "repository": "https://github.com/Stevenjsg/prueba-next14",
     "demo": "https://filmscenter.vercel.app/"
   }
