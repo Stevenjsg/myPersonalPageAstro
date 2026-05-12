@@ -1,204 +1,272 @@
 {
-    "basics": {
-      "name": "Steven Silva",
-      "label": "Programador",
-      "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1697746483/aeormsfvnz8zqrftzhgp.webp",
-      "email": "steven.jsg96@gmail.com",
-      "url": "https://stevenjsg.com",
-      "summary": "Soy un desarrollador web en formación con una sólida base en React y Node. Mi objetivo es crear aplicaciones funcionales y visualmente atractivas, y siempre estoy buscando nuevas formas de aprender y mejorar mis habilidades.",
-      "location": {
-        "address": "C/ Escultor Alfonso Gabino",
-        "postalCode": "VAL 46022",
-        "city": "Valencia",
-        "countryCode": "ES",
-        "region": "Valencia"
-      },
-      "profiles": [{
-        "network": "X",
-        "username": "Steven_JSG",
-        "icon":"x",
-        "url": "https://x.com/Steven_JSG/"
-      },
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Steven Jose Silva Gomez",
+    "label": "Desarrollador Full-Stack Junior",
+    "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1697746483/aeormsfvnz8zqrftzhgp.webp",
+
+    "email": "steven.jsg96@gmail.com",
+    "phone": "+34 640934240",
+    "url": "https://stevenjsg.com",
+    "summary": "Desarrollador full-stack con base sólida en JavaScript/TypeScript, React, Next.js, Vue 3 y Node.js, demostrada en proyectos personales completos desplegados en producción. Ingeniero en Sistemas Informáticos y actualmente cursando el Máster en Ingeniería Informática en la UPV. Busco incorporarme a un equipo de desarrollo donde aportar en frontend y backend y consolidar buenas prácticas de equipo (Git workflows, code review, testing). Disponibilidad: media jornada o prácticas, remoto/híbrido (Valencia).",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Valencia",
+      "countryCode": "ES",
+      "region": "Valencia"
+    },
+    "profiles": [
       {
         "network": "GitHub",
-        "username": "StevenJSG",
-        "icon":"github",
-        "url": "https://github.com/stevenjsg/"}
-      ]
-    },
-    "work": [{
-      "name": "Company",
-      "position": "President",
-      "url": "https://company.com",
-      "startDate": "2013-01-01",
-      "endDate": "2014-01-01",
-      "summary": "Description…",
-      "highlights": [
-        "Started the company"
-      ]
-    }],
-    "education": [
+        "username": "Stevenjsg",
+        "url": "https://github.com/Stevenjsg"
+      },
       {
-      "institution": "Universidad Politécnica de Valencia",
-      "url": "https://www.upv.es/estudios/master/muiinf/",
-      "area": "Escuela Técnica Superior de Ingeniería Informática",
-      "degree": "Máster Universitario en Ingeniería Informática",
-      "studyType": "Máster",
-      "startDate": "2025",
-      "endDate": "2027",
-      "score": "N/A"
-    },{
-      "institution": "Universidad Técnica de Manabí",
-      "url": "https://utm.edu.ec",
-      "area": "Facultad de ciencias informáticas",
-      "degree": "Ingeniería en Sistemas informáticos",
-      "studyType": "Ingeniería",
-      "startDate": "2016",
-      "endDate": "2022",
-      "score": "8.0"
-    },
-  {
-      "institution": "Colegio Juan XXIII",
+        "network": "LinkedIn",
+        "username": "stevensilvagomez",
+        "url": "https://www.linkedin.com/in/stevensilvagomez/"
+      },
+      {
+        "network": "X",
+        "username": "Steven_JSG",
+        "url": "https://x.com/Steven_JSG"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Eroski",
+      "position": "Dependiente / Atención al cliente",
       "url": "",
-      "area": "Educación Secundaria Obligatoria",
-      "degree": "E.S.O",
-      "studyType": "Secundaria",
-      "startDate": "2010",
-      "endDate": "2013",
-      "score": "6.0"
-    }],
-    "skills": [{
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
+      "location": "Ibiza, España",
+      "startDate": "2022-01-01",
+      "endDate": "2025-12-31",
+      "summary": "Atención directa al público, gestión de caja y trabajo en equipo en entorno comercial. Compaginado con formación autodidacta continua en desarrollo web y construcción de proyectos personales completos (React, Next.js, Vue 3, Node.js).",
+      "highlights": [
+        "Atención directa al público y gestión de caja",
+        "Trabajo en equipo en entorno comercial",
+        "Formación autodidacta continua en desarrollo web en paralelo"
       ]
-    }],
-    "languages": [{
-      "language": "Español",
-      "fluency": "Nativo"
     },
     {
-      "language": "Inglés",
-      "fluency": "Intermedio"
-    }],
-    "interests": [{
-      "name": "Gym",
-      "keywords": [
-        "Salud",
-        "Deporte",
-        "Fuerza"
+      "name": "SmartWork S.A.",
+      "position": "Prácticas profesionales — Desarrollo de aplicaciones web",
+      "url": "",
+      "location": "Quito, Ecuador",
+      "startDate": "2020-09-01",
+      "endDate": "2021-02-28",
+      "summary": "Prácticas curriculares (240 horas) en el Departamento de Informática, vinculadas a la asignatura de Aplicaciones Web. Formación y desarrollo con Haxe, lenguaje multiplataforma orientado a la transpilación a JavaScript y otros targets, aplicado al desarrollo y análisis de software.",
+      "highlights": [
+        "Prácticas curriculares de 240 horas",
+        "Departamento de Informática, asignatura de Aplicaciones Web",
+        "Desarrollo con Haxe (transpilación a JavaScript y otros targets)"
       ]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Universidad Politécnica de Valencia",
+      "url": "https://www.upv.es/estudios/master/muiinf",
+      "area": "Ingeniería Informática",
+      "studyType": "Máster Universitario en Ingeniería Informática",
+      "startDate": "2025-09-01",
+      "endDate": "2027-07-31",
+      "score": "",
+      "courses": [],
+      "location": "Valencia, España",
+      "department": "Escuela Técnica Superior de Ing. Informática",
+      "status": "En curso"
+    },
+    {
+      "institution": "Universidad Técnica de Manabí",
+      "url": "https://www.utm.edu.ec",
+      "area": "Sistemas Informáticos",
+      "studyType": "Ingeniería en Sistemas Informáticos",
+      "startDate": "2016-09-01",
+      "endDate": "2022-07-31",
+      "score": "8.0/10",
+      "courses": [],
+      "location": "Manabí, Ecuador",
+      "department": "Facultad de Ciencias Informáticas"
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Frontend",
+      "level": "Intermediate",
+      "keywords": [
+        "React",
+        "Next.js",
+        "Vue 3",
+        "Pinia",
+        "Astro",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "JavaScript",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "Backend",
+      "level": "Intermediate",
+      "keywords": ["Node.js", "Express", "REST APIs", "Socket.io", "PostgreSQL"]
+    },
+    {
+      "name": "Herramientas",
+      "level": "Intermediate",
+      "keywords": [
+        "Git",
+        "GitHub",
+        "Docker",
+        "Vercel",
+        "Render",
+        "Línea de comandos (Linux)",
+        "Kubernetes (nivel básico)"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "B1 (lectura técnica fluida; conversación en mejora activa)"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Gym",
+      "keywords": ["Salud", "Deporte", "Fuerza"]
     },
     {
       "name": "Tecnología",
-      "keywords": [
-        "Desarrollo web",
-        "Programación"
-      ]
+      "keywords": ["Desarrollo web", "Programación"]
     },
     {
       "name": "Música",
-      "keywords": [
-        "Rock",
-        "Phonk",
-        "Trap"
-      ]
+      "keywords": ["Rock", "Phonk", "Trap"]
     },
-  {
-    "name": "Manga, Anime y Videojuegos",
-    "keywords": [
-      "Manga",
-      "Anime",
-      "Videojuegos"
-    ]
-  },
-{
-  "name": "Leer libros",
-  "keywords": [
-    "Ficción",
-    "No ficción",
-    "Ciencia ficción"
-  ] 
-}],
-  
-
-
-    "projects": [
-  {
-    "name": "Página web de películas y cartelera",
-    "startDate": "2023-01-01",
-    "endDate": "2023-06-01",
-    "description": "Página web sencilla, con uso de API y hecho con NextJS version 14 y Tailwind.",
-    "highlights": ["REST API", "Cartelera", "Página de películas"],
-    "url": "https://proyecto.com",
-    "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1748638408/7bb3babffa2f72e63d0d332f931356b1.webp",
-    "keywords": ["NextJS", "TailwindCSS", "TypeScript"],
-    "repository": "https://github.com/Stevenjsg/prueba-next14",
-    "demo": "https://filmscenter.vercel.app/"
-  }
-],
-    "stack": [{
+    {
+      "name": "Manga, Anime y Videojuegos",
+      "keywords": ["Manga", "Anime", "Videojuegos"]
+    },
+    {
+      "name": "Leer libros",
+      "keywords": ["Ficción", "No ficción", "Ciencia ficción"]
+    }
+  ],
+  "references": [],
+  "projects": [
+    {
+      "name": "CollabTask — Aplicación de productividad en tiempo real",
+      "description": "Aplicación web full-stack para gestión colaborativa de tareas con comunicación en tiempo real entre clientes mediante WebSockets.",
+      "highlights": [
+        "Arquitectura cliente-servidor: API REST con Node.js + Express y persistencia en PostgreSQL",
+        "Frontend en Vue 3 con gestión de estado mediante Pinia",
+        "Canal bidireccional con Socket.io para sincronización en tiempo real"
+      ],
+      "keywords": [
+        "TypeScript",
+        "Vue 3",
+        "Pinia",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Socket.io"
+      ],
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "url": "https://vue-to-do-ten.vercel.app",
+      "repository": "https://github.com/Stevenjsg/vue-ToDo",
+      "roles": ["Desarrollador Full-Stack"],
+      "entity": "Proyecto personal",
+      "type": "application"
+    },
+    {
+      "name": "CV y Portfolio Web con diseño Bento",
+      "description": "CV interactivo y portfolio personal con diseño Bento, optimizado para presentar el perfil profesional de forma visual y responsive.",
+      "highlights": [
+        "Construido con Astro (HTML estático con hidratación selectiva) y Tailwind CSS",
+        "Modo claro/oscuro y maquetación responsive",
+        "Descarga directa de CV en PDF y despliegue continuo en Vercel desde main"
+      ],
+      "keywords": ["Astro", "Tailwind CSS", "TypeScript"],
+      "startDate": "2024-01-01",
+      "endDate": "",
+      "url": "https://stevenjsg.com",
+      "repository": "https://github.com/Stevenjsg/myPersonalPageAstro",
+      "roles": ["Desarrollador Frontend"],
+      "entity": "Proyecto personal",
+      "type": "application"
+    },
+    {
+      "name": "Films Center — Cartelera de películas",
+      "description": "Aplicación web para explorar carteleras y fichas detalladas de películas consumiendo una API REST externa.",
+      "highlights": [
+        "Renderizado con Next.js 14 (App Router) y rutas dinámicas para el detalle de cada película",
+        "Diseño responsive con Tailwind CSS",
+        "Tipado completo en TypeScript y manejo de estados de carga/error"
+      ],
+      "keywords": ["Next.js 14", "Tailwind CSS", "TypeScript"],
+      "startDate": "2023-01-01",
+      "endDate": "2023-06-30",
+      "url": "https://filmscenter.vercel.app",
+      "repository": "https://github.com/Stevenjsg/prueba-next14",
+      "roles": ["Desarrollador Frontend"],
+      "entity": "Proyecto personal",
+      "type": "application"
+    }
+  ],
+  "stack": [
+    {
       "name": "React",
       "icon": "https://res.cloudinary.com/dljyrseph/image/upload/v1745693231/react_y8fs0p.svg",
       "level": "Intermedio",
-      "keywords": [
-        "React",
-        "React Router",
-        "Redux"
-      ]
+      "keywords": ["React", "React Router", "Redux"]
     },
     {
       "name": "Node",
       "icon": "https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/nodedotjs_zvmoiy.svg",
       "level": "Intermedio",
-      "keywords": [
-        "Node",
-        "Express",
-        "MongoDB"
-      ]
+      "keywords": ["Node", "Express", "MongoDB"]
     },
     {
-      "name":"AstroJS",
-      "icon":"https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
-      "level":"Intermedio",
-      "keywords":[
-        "Astro",
-        "React",
-        "TailwindCSS"
-      ]
+      "name": "AstroJS",
+      "icon": "https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
+      "level": "Intermedio",
+      "keywords": ["Astro", "React", "TailwindCSS"]
     },
-     {
-      "name":"Typescript",
-      "icon":"https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
-      "level":"Intermedio",
-      "keywords":[
-        "Typescript",
-        "Tipos",
-        "Interfaces"
-      ]
+    {
+      "name": "Typescript",
+      "icon": "https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
+      "level": "Intermedio",
+      "keywords": ["Typescript", "Tipos", "Interfaces"]
     },
-     {
-      "name":"NextJS",
-      "icon":"https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
-      "level":"Intermedio",
-      "keywords":[
-        "React",
-        "NextJS",
-        "Framework"
-      ]
+    {
+      "name": "NextJS",
+      "icon": "https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
+      "level": "Intermedio",
+      "keywords": ["React", "NextJS", "Framework"]
     },
-     {
-      "name":"PostgreSQL",
-      "icon":"https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
-      "level":"Intermedio",
-      "keywords":[
-        "SQL",
-        "Base de datos",
-        "Queries"
-      ]
+    {
+      "name": "PostgreSQL",
+      "icon": "https://res.cloudinary.com/dljyrseph/image/upload/v1745693230/astro_1_sy0tu0.svg",
+      "level": "Intermedio",
+      "keywords": ["SQL", "Base de datos", "Queries"]
     }
-  ]
+  ],
+
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2026-05-10T00:00:00"
   }
+}
