@@ -1,12 +1,14 @@
 export interface CvMockup {
-    basics:    Basics;
-    work:      Work[];
-    education: Education[];
-    skills:    Skill[];
-    languages: Language[];
-    interests: Interest[];
-    projects:  Project[];
-    stack:     Skill[];
+    basics:       Basics;
+    availability: Availability;
+    work:         Work[];
+    education:    Education[];
+    skills:       Skill[];
+    skillGroups:  SkillGroup[];
+    languages:    Language[];
+    interests:    Interest[];
+    projects:     Project[];
+    stack:        Skill[];
 }
 
 export interface Basics {
@@ -14,7 +16,10 @@ export interface Basics {
     label:    string;
     image:    string;
     email:    string;
+    phone?:   string;
     url:      string;
+    cvUrl?:   string;
+    available?: boolean;
     summary:  string;
     location: Location;
     profiles: Profile[];
@@ -31,19 +36,26 @@ export interface Location {
 export interface Profile {
     network:  string;
     username: string;
-    icon:     string;
+    icon?:    string;
     url:      string;
+}
+
+export interface Availability {
+    jornada:   string;
+    modalidad: string;
 }
 
 export interface Education {
     institution: string;
     url:         string;
     area:        string;
-    degree:      string;
+    degree?:     string;
     studyType:   string;
     startDate:   string;
     endDate:     string;
     score:       string;
+    note?:       string;
+    status?:     string;
 }
 
 export interface Interest {
@@ -54,19 +66,23 @@ export interface Interest {
 export interface Language {
     language: string;
     fluency:  string;
+    level?:   number;
 }
 
 export interface Project {
-    name:        string;
-    startDate:   string;
-    endDate:     string;
-    description: string;
-    highlights:  string[];
-    url:         string;
-    image:       string;
-    keywords:    string[];
-    repository:  string;
-    demo:        string;
+    name:             string;
+    tag?:             string;
+    featured?:        boolean;
+    startDate:        string;
+    endDate:          string;
+    description:      string;
+    highlights:       string[];
+    url:              string;
+    image?:           string;
+    keywords:         string[];
+    accentKeywords?:  string[];
+    repository:       string;
+    demo?:            string;
 }
 
 export interface Skill {
@@ -74,6 +90,16 @@ export interface Skill {
     level:    string;
     keywords: string[];
     icon?:    string;
+}
+
+export interface SkillItem {
+    name:  string;
+    score: number;
+}
+
+export interface SkillGroup {
+    name:  string;
+    items: SkillItem[];
 }
 
 export interface Work {

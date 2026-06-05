@@ -1,35 +1,69 @@
 ---
-/* @jsxImportSource astro */
+import Card from "./Card.astro";
 import type { Education } from "../../data/dataTypes";
+
+interface Props {
+  education: Education[];
+}
 const { education } = Astro.props;
 ---
 
-<article
-  class="border border-[rgba(0,0,0,0.04)] dark:border-white/10
-  rounded-3xl p-6
-  bg-white/70 dark:bg-white/10
-  backdrop-blur-xl
-  text-black dark:text-white
-  shadow-[0_6px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(25,30,55,0.80)]
-  min-h-[517px]
-  transition-all duration-300 ease-in-out
-  hover:shadow-lg
-  hover:bg-white/20 dark:hover:bg-neutral-800/20
-  dark:hover:ring dark:hover:ring-blue-500/20"
->
-  <h3 class="text-xl font-semibold mb-4 font-serif">Educación</h3>
-  <ul class="space-y-2">
+<section class="mb-12 last:mb-0">
+  <div class="flex items-end justify-between mb-5">
+    <div>
+      <span
+        class="font-mono text-[11px] tracking-[0.25em] uppercase text-[var(--kicker)]"
+      >
+        · Formación
+      </span>
+      <h2 class="text-2xl font-extrabold tracking-[-0.02em] mt-1.5">
+        Educación
+      </h2>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {
       education.map((edu: Education) => (
-        <li class="border-l-4 dark:border-white/20 border-black/10 pl-4">
-          <h4 class="text-lg font-bold">{edu.degree}</h4>
-          <p class="text-sm italic">{edu.institution}</p>
-          <p class="text-sm text-gray-400">{edu.area}</p>
-          <p class="text-sm text-gray-400">
-            {edu.startDate} – {edu.endDate} | Promedio: {edu.score}
-          </p>
-        </li>
+        <Card class="p-6 flex gap-4">
+          <span class="flex-none inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[var(--surface-2)] text-[var(--text-2)] dark:text-sunglow-500">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M22 9 12 4 2 9l10 5 10-5Z" />
+              <path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
+            </svg>
+          </span>
+          <div>
+            <span class="font-mono text-[11px] text-[var(--kicker)]">
+              {edu.startDate} — {edu.endDate}
+            </span>
+            {edu.status && (
+              <span class="inline-flex items-center gap-1 ml-2 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[var(--color-emerald-accent)]/15 text-[var(--color-emerald-text)] dark:text-emerald-400">
+                <i class="block w-1 h-1 rounded-full bg-[var(--color-emerald-accent)]" />
+                {edu.status}
+              </span>
+            )}
+            <h3 class="text-[15px] font-bold leading-tight mt-1">
+              {edu.institution}
+            </h3>
+            <p class="text-[13px] text-[var(--text-2)] mt-0.5">
+              {edu.studyType}
+            </p>
+            {edu.note && (
+              <p class="font-mono text-[12px] text-[var(--kicker)] mt-1.5">
+                {edu.note}
+              </p>
+            )}
+          </div>
+        </Card>
       ))
     }
-  </ul>
-</article>
+  </div>
+</section>

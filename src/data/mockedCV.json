@@ -3,11 +3,12 @@
     "name": "Steven Jose Silva Gomez",
     "label": "Desarrollador Full-Stack Junior",
     "image": "https://res.cloudinary.com/dpnfudcqd/image/upload/v1697746483/aeormsfvnz8zqrftzhgp.webp",
-
     "email": "steven.jsg96@gmail.com",
     "phone": "+34 640934240",
     "url": "https://stevenjsg.com",
-    "summary": "Desarrollador full-stack con base sólida en JavaScript/TypeScript, React, Next.js, Vue 3 y Node.js, demostrada en proyectos personales completos desplegados en producción. Ingeniero en Sistemas Informáticos y actualmente cursando el Máster en Ingeniería Informática en la UPV. Busco incorporarme a un equipo de desarrollo donde aportar en frontend y backend y consolidar buenas prácticas de equipo (Git workflows, code review, testing). Disponibilidad: media jornada o prácticas, remoto/híbrido (Valencia).",
+    "cvUrl": "",
+    "available": true,
+    "summary": "Desarrollador full-stack con base sólida en JavaScript/TypeScript, React, Next.js, Vue 3 y Node.js, demostrada en proyectos personales completos desplegados en producción. Ingeniero en Sistemas Informáticos y cursando el Máster en Ingeniería Informática en la UPV. Busco incorporarme a un equipo donde aportar en frontend y backend y consolidar buenas prácticas (Git workflows, code review, testing).",
     "location": {
       "address": "",
       "postalCode": "",
@@ -32,6 +33,10 @@
         "url": "https://x.com/Steven_JSG"
       }
     ]
+  },
+  "availability": {
+    "jornada": "Media jornada o prácticas",
+    "modalidad": "Remoto / híbrido · Valencia"
   },
   "work": [
     {
@@ -70,22 +75,25 @@
       "url": "https://www.upv.es/estudios/master/muiinf",
       "area": "Ingeniería Informática",
       "studyType": "Máster Universitario en Ingeniería Informática",
-      "startDate": "2025-09-01",
-      "endDate": "2027-07-31",
+      "startDate": "2025",
+      "endDate": "2027",
       "score": "",
+      "note": "",
+      "status": "En curso",
       "courses": [],
       "location": "Valencia, España",
-      "department": "Escuela Técnica Superior de Ing. Informática",
-      "status": "En curso"
+      "department": "Escuela Técnica Superior de Ing. Informática"
     },
     {
       "institution": "Universidad Técnica de Manabí",
       "url": "https://www.utm.edu.ec",
       "area": "Sistemas Informáticos",
       "studyType": "Ingeniería en Sistemas Informáticos",
-      "startDate": "2016-09-01",
-      "endDate": "2022-07-31",
+      "startDate": "2016",
+      "endDate": "2022",
       "score": "8.0/10",
+      "note": "Promedio 8.0 / 10",
+      "status": "",
       "courses": [],
       "location": "Manabí, Ecuador",
       "department": "Facultad de Ciencias Informáticas"
@@ -94,6 +102,36 @@
   "awards": [],
   "certificates": [],
   "publications": [],
+  "skillGroups": [
+    {
+      "name": "Frontend",
+      "items": [
+        { "name": "React", "score": 3 },
+        { "name": "Next.js", "score": 3 },
+        { "name": "Vue 3", "score": 3 },
+        { "name": "Tailwind CSS", "score": 4 },
+        { "name": "Astro", "score": 3 }
+      ]
+    },
+    {
+      "name": "Backend",
+      "items": [
+        { "name": "Node.js", "score": 3 },
+        { "name": "Express", "score": 3 },
+        { "name": "Socket.io", "score": 2 },
+        { "name": "PostgreSQL", "score": 3 }
+      ]
+    },
+    {
+      "name": "Lenguajes & tooling",
+      "items": [
+        { "name": "TypeScript", "score": 4 },
+        { "name": "JavaScript", "score": 4 },
+        { "name": "Git", "score": 3 },
+        { "name": "Redux · Pinia", "score": 3 }
+      ]
+    }
+  ],
   "skills": [
     {
       "name": "Frontend",
@@ -132,12 +170,14 @@
   ],
   "languages": [
     {
-      "language": "Spanish",
-      "fluency": "Native speaker"
+      "language": "Español",
+      "fluency": "Nativo",
+      "level": 100
     },
     {
-      "language": "English",
-      "fluency": "B1 (lectura técnica fluida; conversación en mejora activa)"
+      "language": "Inglés",
+      "fluency": "B2 · Intermedio",
+      "level": 68
     }
   ],
   "interests": [
@@ -165,12 +205,14 @@
   "references": [],
   "projects": [
     {
-      "name": "CollabTask — Aplicación de productividad en tiempo real",
+      "name": "CollabTask",
+      "tag": "Productividad en tiempo real",
+      "featured": false,
       "description": "Aplicación web full-stack para gestión colaborativa de tareas con comunicación en tiempo real entre clientes mediante WebSockets.",
       "highlights": [
-        "Arquitectura cliente-servidor: API REST con Node.js + Express y persistencia en PostgreSQL",
+        "API REST con Node.js + Express y persistencia en PostgreSQL",
         "Frontend en Vue 3 con gestión de estado mediante Pinia",
-        "Canal bidireccional con Socket.io para sincronización en tiempo real"
+        "Canal bidireccional con Socket.io para sincronización en vivo"
       ],
       "keywords": [
         "TypeScript",
@@ -181,6 +223,7 @@
         "PostgreSQL",
         "Socket.io"
       ],
+      "accentKeywords": [],
       "startDate": "2024-01-01",
       "endDate": "2024-12-31",
       "url": "https://vue-to-do-ten.vercel.app",
@@ -190,14 +233,17 @@
       "type": "application"
     },
     {
-      "name": "CV y Portfolio Web con diseño Bento",
+      "name": "CV & Portfolio",
+      "tag": "Diseño Bento",
+      "featured": true,
       "description": "CV interactivo y portfolio personal con diseño Bento, optimizado para presentar el perfil profesional de forma visual y responsive.",
       "highlights": [
-        "Construido con Astro (HTML estático con hidratación selectiva) y Tailwind CSS",
-        "Modo claro/oscuro y maquetación responsive",
-        "Descarga directa de CV en PDF y despliegue continuo en Vercel desde main"
+        "Astro (HTML estático con hidratación selectiva) + Tailwind CSS",
+        "Modo claro/oscuro y maquetación totalmente responsive",
+        "Descarga de CV en PDF y CD en Vercel desde main"
       ],
-      "keywords": ["Astro", "Tailwind CSS", "TypeScript"],
+      "keywords": ["Tailwind CSS", "TypeScript"],
+      "accentKeywords": ["Astro"],
       "startDate": "2024-01-01",
       "endDate": "",
       "url": "https://stevenjsg.com",
@@ -207,14 +253,17 @@
       "type": "application"
     },
     {
-      "name": "Films Center — Cartelera de películas",
+      "name": "Films Center",
+      "tag": "Cartelera de películas",
+      "featured": false,
       "description": "Aplicación web para explorar carteleras y fichas detalladas de películas consumiendo una API REST externa.",
       "highlights": [
-        "Renderizado con Next.js 14 (App Router) y rutas dinámicas para el detalle de cada película",
+        "Next.js 14 (App Router) con rutas dinámicas por película",
         "Diseño responsive con Tailwind CSS",
-        "Tipado completo en TypeScript y manejo de estados de carga/error"
+        "Tipado completo y manejo de estados de carga/error"
       ],
       "keywords": ["Next.js 14", "Tailwind CSS", "TypeScript"],
+      "accentKeywords": [],
       "startDate": "2023-01-01",
       "endDate": "2023-06-30",
       "url": "https://filmscenter.vercel.app",

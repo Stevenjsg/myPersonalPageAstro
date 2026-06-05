@@ -1,3 +1,105 @@
 @import "tailwindcss";
 
+@import "@fontsource/manrope/300.css";
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/manrope/800.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-sunglow-400: #ffb012;
+  --color-sunglow-500: #ffc857;
+  --color-sunglow-600: #ffd278;
+  --color-sunglow-700: #ffdd9a;
+  --color-sunglow-100: #442e00;
+
+  --color-ink-50:  #fafafa;
+  --color-ink-100: #f4f4f5;
+  --color-ink-200: #e8e8ea;
+  --color-ink-300: #d1d1d6;
+  --color-ink-400: #9b9ba3;
+  --color-ink-500: #6b6b75;
+  --color-ink-600: #48484f;
+  --color-ink-700: #2a2a2f;
+  --color-ink-800: #161618;
+  --color-ink-900: #0a0a0b;
+  --color-ink-950: #050506;
+
+  --color-emerald-accent: #10b981;
+  --color-emerald-text: #059669;
+}
+
+/* =========================================================
+   SEMANTIC TOKENS — used as arbitrary values via var()
+   ========================================================= */
+:root {
+  --bg:           #ffffff;
+  --bg-grain:     rgba(0, 0, 0, 0.012);
+  --surface:      #ffffff;
+  --surface-2:    #f4f4f5;
+  --surface-3:    #fafafa;
+  --border:       #e8e8ea;
+  --border-soft:  #f4f4f5;
+  --text:         #0a0a0b;
+  --text-2:       #48484f;
+  --text-3:       #6b6b75;
+  --text-mute:    #9b9ba3;
+  --accent:       #0a0a0b;
+  --accent-text:  #ffffff;
+  --kicker:       #6b6b75;
+  --chip-bg:      #f4f4f5;
+  --chip-text:    #2a2a2f;
+  --shadow-1: 0 1px 2px rgba(15, 15, 20, 0.05), 0 1px 1px rgba(15, 15, 20, 0.03);
+  --shadow-2: 0 2px 8px rgba(15, 15, 20, 0.06), 0 1px 3px rgba(15, 15, 20, 0.04);
+  color-scheme: light;
+}
+
+html.dark {
+  --bg:           #050506;
+  --bg-grain:     rgba(255, 200, 87, 0.04);
+  --surface:      #0a0a0b;
+  --surface-2:    #161618;
+  --surface-3:    rgba(5, 5, 6, 0.5);
+  --border:       rgba(255, 200, 87, 0.16);
+  --border-soft:  rgba(255, 200, 87, 0.10);
+  --text:         #fafafa;
+  --text-2:       #d1d1d6;
+  --text-3:       #9b9ba3;
+  --text-mute:    #6b6b75;
+  --accent:       #ffc857;
+  --accent-text:  #0a0a0b;
+  --kicker:       #ffd278;
+  --chip-bg:      #161618;
+  --chip-text:    #ffdd9a;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 8px 32px -12px rgba(255, 200, 87, 0.15);
+  color-scheme: dark;
+}
+
+html, body { margin: 0; }
+body {
+  font-family: "Manrope", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-image:
+    radial-gradient(circle at 20% 10%, var(--bg-grain) 0%, transparent 40%),
+    radial-gradient(circle at 80% 60%, var(--bg-grain) 0%, transparent 40%);
+}
+
+/* Pulse animation for "Disponible" indicator */
+@keyframes ping-soft {
+  75%, 100% { transform: scale(2.4); opacity: 0; }
+}
+.pulse-ping::after {
+  animation: ping-soft 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}

@@ -1,32 +1,57 @@
 ---
+import Card from "./Card.astro";
 import type { Language } from "../../data/dataTypes";
+
+interface Props {
+  languages: Language[];
+}
 const { languages } = Astro.props;
 ---
 
-<article
-  class="border border-[rgba(0,0,0,0.04)] dark:border-white/10
-  rounded-3xl p-6
-  bg-white/70 dark:bg-white/10
-  backdrop-blur-xl
-  text-black dark:text-white
-  shadow-[0_6px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(25,30,55,0.80)]
-  min-h-[200px]
-  transition-all duration-300 ease-in-out
-  hover:shadow-lg
-  hover:bg-white/20 dark:hover:bg-neutral-800/20
-  dark:hover:ring dark:hover:ring-blue-500/20"
->
-  <h3 class="text-xl font-semibold mb-4 font-serif">Idiomas</h3>
-  <ul class="space-y-2">
-    {
-      languages.map((lang: Language) => (
-        <li class="flex justify-between items-center border-b border-zinc-500 dark:border-zinc-200 pb-1">
-          <span class="text-sm text-zinc-500  dark:text-white font-medium">
-            {lang.language}
+<Card class="p-6">
+  <div class="flex items-center gap-2.5 mb-4">
+    <span
+      class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[var(--surface-2)] text-[var(--text-2)] dark:text-sunglow-500"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="9"></circle>
+        <path
+          d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"
+        ></path>
+      </svg>
+    </span>
+    <span
+      class="font-mono text-[11px] tracking-[0.25em] uppercase text-[var(--kicker)]"
+    >
+      · Idiomas
+    </span>
+  </div>
+
+  {
+    languages.map((lang: Language) => (
+      <div class="mb-4 last:mb-0">
+        <div class="flex items-baseline justify-between mb-1.5">
+          <span class="text-[13px] font-semibold">{lang.language}</span>
+          <span class="font-mono text-[11px] text-[var(--kicker)]">
+            {lang.fluency}
           </span>
-          <span class="text-sm italic text-gray-400">{lang.fluency}</span>
-        </li>
-      ))
-    }
-  </ul>
-</article>
+        </div>
+        <div class="h-1.5 rounded-full bg-[var(--surface-2)] overflow-hidden">
+          <span
+            class="block h-full rounded-full bg-[var(--accent)]"
+            style={`width:${lang.level ?? 0}%`}
+          />
+        </div>
+      </div>
+    ))
+  }
+</Card>

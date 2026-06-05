@@ -1,97 +1,122 @@
 ---
+import Card from "./Card.astro";
 import type { Project } from "../../data/dataTypes";
 
+interface Props {
+  projects: Project[];
+}
 const { projects } = Astro.props;
 ---
 
-<article
-  class="border border-[rgba(0,0,0,0.04)] dark:border-white/10
-  rounded-3xl p-6
-  bg-white/70 dark:bg-white/10
-  backdrop-blur-xl
-  text-black dark:text-white
-  shadow-[0_6px_20px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(25,30,55,0.80)]
-  min-h-[500px]
-  transition-all duration-300 ease-in-out
-  hover:shadow-lg
-  hover:bg-white/20 dark:hover:bg-neutral-800/20
-  dark:hover:ring dark:hover:ring-blue-500/20"
->
-  <h3 class="text-xl font-semibold mb-6 font-serif">Proyectos</h3>
+<section class="mb-12 last:mb-0">
+  <div class="flex items-end justify-between mb-5">
+    <div>
+      <span
+        class="font-mono text-[11px] tracking-[0.25em] uppercase text-[var(--kicker)]"
+      >
+        · Trabajo seleccionado
+      </span>
+      <h2 class="text-2xl font-extrabold tracking-[-0.02em] mt-1.5">
+        Proyectos
+      </h2>
+    </div>
+    <span class="font-mono text-[12px] text-[var(--kicker)]">
+      <b class="text-[var(--accent)] text-base">{projects.length}</b> total
+    </span>
+  </div>
 
-  <div class="grid gap-6 md:grid-cols-2">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
     {
-      !!projects?.length &&
-        projects.map((project: Project) => (
-          <div class="border border-white/20 rounded-2xl p-4 bg-white/80 dark:bg-white/10 shadow-md hover:shadow-2xl transition group flex flex-col gap-2">
-            {/* Imagen */}
-            {project.image && (
-              <img
-                src={project.image}
-                alt={`Imagen del proyecto ${project.name}`}
-                class="rounded-xl w-full aspect-video object-cover border border-white/10 mb-2 group-hover:scale-105 group-hover:shadow-xl transition"
-              />
-            )}
+      projects.map((project: Project) => {
+        const targetUrl = project.url || project.repository || "#";
+        return (
+          <Card class="group p-6 flex flex-col" featured={project.featured}>
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="text-base font-extrabold tracking-[-0.01em] leading-[1.15] m-0">
+                  {project.name}
+                </h3>
+                {project.tag && (
+                  <div class="font-mono text-[11px] tracking-[0.15em] uppercase text-sunglow-400 dark:text-sunglow-600 mt-1">
+                    {project.tag}
+                  </div>
+                )}
+              </div>
+              <a
+                href={targetUrl}
+                target="_blank"
+                rel="noopener"
+                aria-label={`Abrir ${project.name}`}
+                class="flex-none inline-flex items-center justify-center w-9 h-9 rounded-full border border-[var(--border)] text-[var(--text-mute)] dark:text-sunglow-600 transition-all duration-200 group-hover:bg-[var(--accent)] group-hover:text-[var(--accent-text)] group-hover:border-transparent"
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </a>
+            </div>
 
-            {/* Nombre del proyecto */}
-            <a
-              href={project.demo || project.repository}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-lg font-bold hover:underline block mb-1"
-            >
-              {project.name}
-            </a>
-            {/* Descripción corta */}
-            <p class="text-zinc-700 dark:text-zinc-200 text-sm mb-1  text-pretty">
+            <p class="text-[13px] leading-[1.6] text-[var(--text-2)] mt-3">
               {project.description}
             </p>
 
-            {/* Badges del stack, si existe project.keywords */}
-            {project.keywords && project.keywords.length > 0 && (
-              <div class="flex gap-2 flex-wrap mb-1">
-                {project.keywords.map((kw) => (
-                  <span class="bg-zinc-800/90 text-white px-2 py-1 text-xs rounded-full dark:bg-zinc-700">
-                    {kw}
-                  </span>
-                ))}
-              </div>
-            )}
+            <div class="flex flex-wrap gap-1.5 mt-4">
+              {project.accentKeywords?.map((kw: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 rounded-md font-mono text-[11px] bg-sunglow-500/15 text-sunglow-400 dark:text-sunglow-500">
+                  {kw}
+                </span>
+              ))}
+              {project.keywords?.map((kw: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 rounded-md font-mono text-[11px] bg-[var(--chip-bg)] text-[var(--chip-text)]">
+                  {kw}
+                </span>
+              ))}
+            </div>
 
-            {/* Highlights/features */}
             {!!project.highlights?.length && (
-              <ul class="list-disc list-inside text-xs text-zinc-500 dark:text-zinc-400 mb-2">
-                {project.highlights.map((item) => (
-                  <li>{item}</li>
+              <ul class="list-none p-0 mt-4 flex-1 space-y-2">
+                {project.highlights.map((item: string) => (
+                  <li class="flex gap-2 text-[12.5px] leading-[1.6] text-[var(--text-2)]">
+                    <span class="flex-none mt-[7px] w-1 h-1 rounded-full bg-sunglow-500" />
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
             )}
 
-            {/* Links a demo y código */}
-            <div class="flex gap-2 mt-auto">
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="underline text-blue-600 hover:text-blue-400 dark:text-green-600 dark:hover:text-green-400 text-xs transition-colors duration-150 delay-75"
-                >
-                  Demo
-                </a>
-              )}
-              {project.repository && (
-                <a
-                  href={project.repository}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="underline text-zinc-600 hover:text-zinc-400 dark:text-zinc-400 dark:hover:text-zinc-200 text-xs transition-colors duration-150 delay-75"
-                >
-                  Código
-                </a>
-              )}
-            </div>
-          </div>
-        ))
+            <a
+              href={project.repository || targetUrl}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-1.5 mt-5 text-[12px] font-semibold no-underline text-[var(--text-2)] dark:text-sunglow-600 group-hover:text-[var(--text)] dark:group-hover:text-sunglow-500"
+            >
+              Ver código
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </a>
+          </Card>
+        );
+      })
     }
   </div>
-</article>
+</section>

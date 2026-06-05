@@ -1,0 +1,93 @@
+---
+import Card from "./Card.astro";
+import type { Availability } from "../../data/dataTypes";
+
+interface Props {
+  availability: Availability;
+}
+const { availability } = Astro.props;
+---
+
+<Card class="p-6">
+  <div class="flex items-center gap-2.5 mb-4">
+    <span
+      class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[var(--surface-2)] text-[var(--text-2)] dark:text-sunglow-500"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"
+        ></path>
+      </svg>
+    </span>
+    <span
+      class="font-mono text-[11px] tracking-[0.25em] uppercase text-[var(--kicker)]"
+    >
+      · Disponibilidad
+    </span>
+  </div>
+
+  <div class="flex items-start gap-2.5 mb-3">
+    <span class="mt-0.5 text-sunglow-400 dark:text-sunglow-500 inline-flex">
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 7v5l3 2"></path>
+      </svg>
+    </span>
+    <div>
+      <div
+        class="font-mono text-[11px] tracking-[0.15em] uppercase text-[var(--text-mute)] dark:text-sunglow-700"
+      >
+        Jornada
+      </div>
+      <div class="text-[13px] font-semibold text-[var(--text)]">
+        {availability.jornada}
+      </div>
+    </div>
+  </div>
+
+  <div class="flex items-start gap-2.5">
+    <span class="mt-0.5 text-sunglow-400 dark:text-sunglow-500 inline-flex">
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+    </span>
+    <div>
+      <div
+        class="font-mono text-[11px] tracking-[0.15em] uppercase text-[var(--text-mute)] dark:text-sunglow-700"
+      >
+        Modalidad
+      </div>
+      <div class="text-[13px] font-semibold text-[var(--text)]">
+        {availability.modalidad}
+      </div>
+    </div>
+  </div>
+</Card>
