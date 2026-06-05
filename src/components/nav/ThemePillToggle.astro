@@ -1,0 +1,57 @@
+---
+// Toggle puramente CSS-driven: la clase `.dark` en <html> determina el aspecto.
+// El click invoca el script global de `nav-init` que togglea la clase y reescribe
+// la cookie `theme` (misma que Next.js).
+---
+
+<button
+  type="button"
+  data-theme-toggle
+  aria-label="Cambiar tema claro/oscuro"
+  class="group inline-flex items-center gap-2"
+>
+  <span
+    class="relative h-6 w-11 rounded-full p-0.5 transition-colors bg-ink-200 dark:bg-sunglow-500"
+  >
+    <span
+      class="block h-5 w-5 rounded-full bg-white shadow-sm transition-transform dark:bg-ink-900 translate-x-0 dark:translate-x-5"
+    ></span>
+  </span>
+  <span
+    class="text-ink-700 transition-transform group-hover:rotate-12 dark:text-sunglow-500 inline-flex"
+  >
+    <!-- Sun (visible en dark) -->
+    <svg
+      class="hidden dark:inline-block"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="4"></circle>
+      <path
+        d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+      ></path>
+    </svg>
+    <!-- Moon (visible en light) -->
+    <svg
+      class="inline-block dark:hidden"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path>
+    </svg>
+  </span>
+</button>

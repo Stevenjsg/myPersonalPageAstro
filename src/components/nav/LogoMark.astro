@@ -1,0 +1,40 @@
+---
+interface Props {
+  size?: number;
+  href?: string;
+}
+const { size = 26, href = "/" } = Astro.props;
+const cell = size / 2;
+const letters: Array<[string, string]> = [
+  ["S", "J"],
+  ["S", "G"],
+];
+---
+
+<a
+  aria-label="SJSG — Inicio"
+  class="group inline-flex items-center gap-2.5"
+  href={href}
+>
+  <span class="inline-flex flex-col" style={`width:${size}px;height:${size}px`}>
+    {
+      letters.map((row) => (
+        <span class="flex">
+          {row.map((letter) => (
+            <span
+              class="flex items-center justify-center font-extrabold text-ink-900 dark:text-sunglow-500"
+              style={`width:${cell}px;height:${cell}px;font-size:${cell * 0.62}px;line-height:1;font-family:Manrope,sans-serif`}
+            >
+              {letter}
+            </span>
+          ))}
+        </span>
+      ))
+    }
+  </span>
+  <span
+    class="hidden text-xl font-extrabold tracking-tight text-ink-900 dark:text-sunglow-500 sm:inline"
+  >
+    SJSG
+  </span>
+</a>

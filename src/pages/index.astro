@@ -1,5 +1,6 @@
 ---
 import CV from "../data/mockedCV.json";
+import NavBar from "../components/nav/NavBar.astro";
 import PersonalData from "../components/cv/PersonalData.astro";
 import AvailabilityData from "../components/cv/AvailabilityData.astro";
 import LanguageData from "../components/cv/LanguageData.astro";
@@ -8,7 +9,6 @@ import EducationData from "../components/cv/EducationData.astro";
 import ProjectsData from "../components/cv/ProjectsData.astro";
 import MetaStrip from "../components/cv/MetaStrip.astro";
 import EndAccent from "../components/cv/EndAccent.astro";
-import ThemeToggle from "../components/utils/ThemeToggle.astro";
 
 import "../styles/global.css";
 
@@ -27,7 +27,7 @@ const {
 const year = new Date().getFullYear();
 ---
 
-<html lang="es" class="dark">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -40,7 +40,9 @@ const year = new Date().getFullYear();
     <title>CV · {basics.name}</title>
   </head>
   <body class="font-sans">
-    <main class="max-w-[1100px] mx-auto px-5 sm:px-8 pt-10 sm:pt-16 pb-18 sm:pb-24">
+    <NavBar />
+
+    <main class="max-w-[1100px] mx-auto px-5 sm:px-8 pt-10 sm:pt-12 pb-18 sm:pb-24">
       <MetaStrip
         backUrl="/"
         backLabel="Volver"
@@ -70,8 +72,6 @@ const year = new Date().getFullYear();
 
       <EndAccent />
     </main>
-
-    <ThemeToggle />
   </body>
 </html>
 
