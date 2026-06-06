@@ -95,7 +95,7 @@ const items: NavItem[] = [
       <a
         data-auth-out
         href="/login"
-        class="hidden text-sm font-medium text-ink-700 transition-colors hover:text-ink-900 dark:text-sunglow-600 dark:hover:text-sunglow-500 sm:inline"
+        class="hidden text-sm font-medium text-ink-700 transition-colors hover:text-ink-900 dark:text-sunglow-600 dark:hover:text-sunglow-500"
       >
         Iniciar sesión
       </a>
@@ -103,7 +103,7 @@ const items: NavItem[] = [
         data-auth-in
         data-logout-btn
         type="button"
-        class="hidden text-sm font-medium text-ink-700 transition-colors hover:text-ink-900 disabled:opacity-50 dark:text-sunglow-600 dark:hover:text-sunglow-500 sm:inline"
+        class="hidden text-sm font-medium text-ink-700 transition-colors hover:text-ink-900 disabled:opacity-50 dark:text-sunglow-600 dark:hover:text-sunglow-500"
       >
         Cerrar sesión
       </button>
@@ -114,15 +114,19 @@ const items: NavItem[] = [
 </header>
 
 <style is:global>
-  /* Visibilidad de los estados de sesión, decidida server-side por la
-     cookie `hasSession` (set por Next.js en /api/login y limpiado por
-     /api/logout). El init script aplica data-session=in|out en <html>
-     antes del paint para evitar flicker. */
-  html[data-session="in"] [data-auth-in] {
-    display: inline;
-  }
-  html[data-session="out"] [data-auth-out] {
-    display: inline;
+  /* Visibilidad de los estados de sesión. La cookie `hasSession` (set
+     por Next.js en /api/login y limpiado por /api/logout) decide cuál
+     se muestra. El init script aplica data-session=in|out en <html>
+     antes del paint para evitar flicker.
+
+     Solo desktop (>=640px): en mobile mantenemos ambos ocultos. */
+  @media (min-width: 640px) {
+    html[data-session="in"] [data-auth-in] {
+      display: inline;
+    }
+    html[data-session="out"] [data-auth-out] {
+      display: inline;
+    }
   }
 </style>
 
