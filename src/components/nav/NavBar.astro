@@ -65,7 +65,11 @@ const items: NavItem[] = [
               : "text-ink-500 hover:text-ink-900 dark:text-ink-400 dark:hover:text-sunglow-600",
           ].join(" ");
           return (
-            <a class={cls} href={item.href} aria-current={isActive ? "page" : undefined}>
+            <a
+              class={cls}
+              href={item.href}
+              aria-current={isActive ? "page" : undefined}
+            >
               <span class="transition-transform group-hover:-translate-y-0.5">
                 <svg
                   width="22"
@@ -103,7 +107,7 @@ const items: NavItem[] = [
         data-auth-in
         data-logout-btn
         type="button"
-        class="hidden text-sm font-medium text-ink-700 transition-colors hover:text-ink-900 disabled:opacity-50 dark:text-sunglow-600 dark:hover:text-sunglow-500"
+        class="hidden text-sm font-medium text-ink-700 transition-colors hover:text-ink-900 disabled:opacity-50 dark:text-sunglow-600 dark:hover:text-sunglow-500 cursor-pointer"
       >
         Cerrar sesión
       </button>
@@ -162,38 +166,42 @@ const items: NavItem[] = [
 
   // Theme toggle — escribe la cookie `theme` (compartida con Next.js) y
   // togglea la clase `.dark` en <html>.
-  document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.toggle("dark");
-      const value = isDark ? "dark" : "light";
-      const maxAge = 60 * 60 * 24 * 365;
-      document.cookie = `theme=${value}; path=/; max-age=${maxAge}; SameSite=Lax`;
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-theme-toggle]")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        const value = isDark ? "dark" : "light";
+        const maxAge = 60 * 60 * 24 * 365;
+        document.cookie = `theme=${value}; path=/; max-age=${maxAge}; SameSite=Lax`;
+      });
     });
-  });
 
   // Logout — POST a /api/logout (Next.js). El endpoint limpia las cookies y
   // redirige a "/". Al ser mismo dominio, las cookies se envían automáticamente.
-  document.querySelectorAll<HTMLButtonElement>("[data-logout-btn]").forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      if (btn.disabled) return;
-      btn.disabled = true;
-      const original = btn.textContent;
-      btn.textContent = "Cerrando…";
-      try {
-        const res = await fetch("/api/logout", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-        });
-        if (res.redirected) {
-          window.location.href = res.url;
-          return;
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-logout-btn]")
+    .forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        if (btn.disabled) return;
+        btn.disabled = true;
+        const original = btn.textContent;
+        btn.textContent = "Cerrando…";
+        try {
+          const res = await fetch("/api/logout", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+          });
+          if (res.redirected) {
+            window.location.href = res.url;
+            return;
+          }
+          // Si no redirige, actualizamos el estado a out localmente.
+          document.documentElement.dataset.session = "out";
+        } finally {
+          btn.disabled = false;
+          btn.textContent = original;
         }
-        // Si no redirige, actualizamos el estado a out localmente.
-        document.documentElement.dataset.session = "out";
-      } finally {
-        btn.disabled = false;
-        btn.textContent = original;
-      }
+      });
     });
-  });
 </script>
